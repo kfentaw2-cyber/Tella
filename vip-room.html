@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    >
+
+    <title>EDILBINGO VIP ROOM</title>
+
+    <!-- =========================================================
+         TELEGRAM MINI APP
+         ========================================================= -->
+
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+
+    <!-- =========================================================
+         VIP ROOM CSS
+         ========================================================= -->
+
+    <link rel="stylesheet" href="/vip-room.css">
+
+</head>
+
+<body>
+
+    <!-- =========================================================
+         TELEGRAM HEADER
+         ========================================================= -->
+
+    <header class="telegram-header">
+
+        <button
+            id="backButton"
+            class="telegram-back"
+            type="button"
+        >
+            ←
+        </button>
+
+        <div class="telegram-title">
+            EDILBINGO
+        </div>
+
+        <div
+            id="telegramUser"
+            class="telegram-user"
+        >
+            Player
+        </div>
+
+    </header>
+
+
+    <!-- =========================================================
+         GAME HEADER
+         ========================================================= -->
+
+    <main class="vip-container">
+
+        <section class="room-header">
+
+            <div>
+
+                <div class="room-label">
+                    ROOM
+                </div>
+
+                <h1 id="roomName">
+                    VIP
+                </h1>
+
+            </div>
+
+
+            <div class="connection-box">
+
+                <span id="connectionStatus">
+                    🔴 Connecting...
+                </span>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             GAME INFORMATION
+             ===================================================== -->
+
+        <section class="game-info">
+
+            <div class="info-card">
+
+                <span class="info-label">
+                    SOLD
+                </span>
+
+                <strong id="soldCount">
+                    0
+                </strong>
+
+            </div>
+
+
+            <div class="info-card">
+
+                <span class="info-label">
+                    TIME
+                </span>
+
+                <strong id="timer">
+                    30s
+                </strong>
+
+            </div>
+
+
+            <div class="info-card">
+
+                <span class="info-label">
+                    BALANCE
+                </span>
+
+                <strong>
+                    <span id="balance">
+                        200.00
+                    </span>
+                    ETB
+                </strong>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             NUMBER GRID
+             ===================================================== -->
+
+        <section class="numbers-section">
+
+            <div
+                id="numbers"
+                class="numbers"
+            >
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             CARD SLOT
+             ===================================================== -->
+
+        <section class="cards-section">
+
+            <div
+                id="slot1"
+                class="card-slot"
+            >
+
+                <div class="plus">
+                    +
+                </div>
+
+                <div class="slot-title">
+                    SLOT 1 EMPTY
+                </div>
+
+            </div>
+
+
+            <div
+                id="slot2"
+                class="card-slot"
+            >
+
+                <div class="plus">
+                    +
+                </div>
+
+                <div class="slot-title">
+                    SLOT 2 EMPTY
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             BUY BUTTON
+             ===================================================== -->
+
+        <section class="purchase-section">
+
+            <button
+                id="buyButton"
+                class="buy-button"
+                disabled
+                type="button"
+            >
+                SELECT A NUMBER
+            </button>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================================================
+         SOCKET.IO
+         ========================================================= -->
+
+    <script src="/socket.io/socket.io.js"></script>
+
+
+    <!-- =========================================================
+         TELEGRAM INITIALIZATION
+         ========================================================= -->
+
+    <script>
+
+        const TelegramApp = window.Telegram?.WebApp;
+
+        if (TelegramApp) {
+
+            /*
+             * Tell Telegram that the Mini App is ready.
+             */
+            TelegramApp.ready();
+
+
+            /*
+             * Expand the Mini App to use available height.
+             */
+            TelegramApp.expand();
+
+
+            /*
+             * Tell Telegram which colors to use.
+             */
+            TelegramApp.setHeaderColor("#111827");
+            TelegramApp.setBackgroundColor("#111827");
+
+
+            /*
+             * Enable Telegram's native closing confirmation.
+             */
+            if (TelegramApp.enableClosingConfirmation) {
+                TelegramApp.enableClosingConfirmation();
+            }
+
+        }
+
+    </script>
+
+
+    <!-- =========================================================
+         EDILBINGO VIP ROOM JAVASCRIPT
+         ========================================================= -->
+
+    <script src="/vip-room.js"></script>
+
+</body>
+
+</html>
+
+<!-- ============================================================
+     TELEGRAM MINI APP
+     ============================================================ -->
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
+
+<!-- ============================================================
+     EDILBINGO TELEGRAM CONFIGURATION
+     ============================================================ -->
+<script src="/js/telegram.js"></script>
+
+<!-- ============================================================
+     SOCKET.IO
+     ============================================================ -->
+<script src="/socket.io/socket.io.js"></script>
+
+<!-- ============================================================
+     EDILBINGO VIP ROOM
+     ============================================================ -->
+<script src="/vip-room.js"></script>
