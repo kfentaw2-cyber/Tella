@@ -12,24 +12,32 @@
 
     <title>EDILBINGO VIP ROOM</title>
 
+
     <!-- =========================================================
-         TELEGRAM MINI APP
+         TELEGRAM MINI APP SDK
+         Load ONCE
          ========================================================= -->
 
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
 
+
     <!-- =========================================================
-         VIP ROOM CSS
+         EDILBINGO VIP ROOM CSS
          ========================================================= -->
 
-    <link rel="stylesheet" href="/vip-room.css">
+    <link
+        rel="stylesheet"
+        href="/vip-room.css?v=2"
+    >
 
 </head>
 
+
 <body>
 
+
     <!-- =========================================================
-         TELEGRAM HEADER
+         TELEGRAM / EDILBINGO HEADER
          ========================================================= -->
 
     <header class="telegram-header">
@@ -42,9 +50,11 @@
             ←
         </button>
 
+
         <div class="telegram-title">
             EDILBINGO
         </div>
+
 
         <div
             id="telegramUser"
@@ -57,10 +67,15 @@
 
 
     <!-- =========================================================
-         GAME HEADER
+         MAIN VIP ROOM
          ========================================================= -->
 
     <main class="vip-container">
+
+
+        <!-- =====================================================
+             ROOM HEADER
+             ===================================================== -->
 
         <section class="room-header">
 
@@ -69,6 +84,7 @@
                 <div class="room-label">
                     ROOM
                 </div>
+
 
                 <h1 id="roomName">
                     VIP
@@ -88,11 +104,15 @@
         </section>
 
 
+
         <!-- =====================================================
              GAME INFORMATION
              ===================================================== -->
 
         <section class="game-info">
+
+
+            <!-- SOLD -->
 
             <div class="info-card">
 
@@ -107,6 +127,8 @@
             </div>
 
 
+            <!-- TIME -->
+
             <div class="info-card">
 
                 <span class="info-label">
@@ -120,6 +142,8 @@
             </div>
 
 
+            <!-- BALANCE -->
+
             <div class="info-card">
 
                 <span class="info-label">
@@ -127,15 +151,19 @@
                 </span>
 
                 <strong>
+
                     <span id="balance">
                         200.00
                     </span>
+
                     ETB
+
                 </strong>
 
             </div>
 
         </section>
+
 
 
         <!-- =====================================================
@@ -147,17 +175,20 @@
             <div
                 id="numbers"
                 class="numbers"
-            >
-            </div>
+            ></div>
 
         </section>
 
 
+
         <!-- =====================================================
-             CARD SLOT
+             CARD SLOTS
              ===================================================== -->
 
         <section class="cards-section">
+
+
+            <!-- SLOT 1 -->
 
             <div
                 id="slot1"
@@ -174,6 +205,8 @@
 
             </div>
 
+
+            <!-- SLOT 2 -->
 
             <div
                 id="slot2"
@@ -193,6 +226,7 @@
         </section>
 
 
+
         <!-- =====================================================
              BUY BUTTON
              ===================================================== -->
@@ -210,83 +244,35 @@
 
         </section>
 
+
     </main>
+
 
 
     <!-- =========================================================
          SOCKET.IO
+         Load ONCE
          ========================================================= -->
 
     <script src="/socket.io/socket.io.js"></script>
 
 
     <!-- =========================================================
-         TELEGRAM INITIALIZATION
+         EDILBINGO TELEGRAM CONFIGURATION
+         Load BEFORE vip-room.js
          ========================================================= -->
 
-    <script>
-
-        const TelegramApp = window.Telegram?.WebApp;
-
-        if (TelegramApp) {
-
-            /*
-             * Tell Telegram that the Mini App is ready.
-             */
-            TelegramApp.ready();
-
-
-            /*
-             * Expand the Mini App to use available height.
-             */
-            TelegramApp.expand();
-
-
-            /*
-             * Tell Telegram which colors to use.
-             */
-            TelegramApp.setHeaderColor("#111827");
-            TelegramApp.setBackgroundColor("#111827");
-
-
-            /*
-             * Enable Telegram's native closing confirmation.
-             */
-            if (TelegramApp.enableClosingConfirmation) {
-                TelegramApp.enableClosingConfirmation();
-            }
-
-        }
-
-    </script>
+    <script src="/js/telegram.js?v=2"></script>
 
 
     <!-- =========================================================
          EDILBINGO VIP ROOM JAVASCRIPT
+         Load LAST
          ========================================================= -->
 
-    <script src="/vip-room.js"></script>
+    <script src="/vip-room.js?v=2"></script>
+
 
 </body>
 
 </html>
-
-<!-- ============================================================
-     TELEGRAM MINI APP
-     ============================================================ -->
-<script src="https://telegram.org/js/telegram-web-app.js"></script>
-
-<!-- ============================================================
-     EDILBINGO TELEGRAM CONFIGURATION
-     ============================================================ -->
-<script src="/js/telegram.js"></script>
-
-<!-- ============================================================
-     SOCKET.IO
-     ============================================================ -->
-<script src="/socket.io/socket.io.js"></script>
-
-<!-- ============================================================
-     EDILBINGO VIP ROOM
-     ============================================================ -->
-<script src="/vip-room.js"></script>
